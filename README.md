@@ -6,7 +6,8 @@ Bring all the pdfs into this current folder. Then execute the script `pdf_and_to
 
 ## Technical comments and Requirements
 - The library *jpdfbookmarks* is used, so *java* is required in order to run it
-- The merging of the pdf is done by the command pdfunite, which is installable on ubuntu through *poppler-utils*
+- The merging of the pdf is done by the command *pdfunite*, which is installable on ubuntu through the package *poppler-utils* (sudo apt install it)
+- For the pdf handling also the package *exiftool* is required, and it is installable as before through the package *libimage-exiftool-perl*
 - The other script `fix_toc_txt.sh` finalizes the computation of the pages 
 
 ## Example
