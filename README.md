@@ -10,4 +10,5 @@ Bring all the pdfs into this current folder. Then execute the script `pdf_and_to
 - The other script `fix_toc_txt.sh` finalizes the computation of the pages 
 
 Here there are some pdf for a small example of the result, where we can see how the single toc of each pdf ended also here, correctly shifted, into the final pdf.
-[example of the result](example.png)
+
+![example of the result](./example.png)
