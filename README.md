@@ -9,6 +9,7 @@ Bring all the pdfs into this current folder. Then execute the script `pdf_and_to
 - The merging of the pdf is done by the command pdfunite, which is installable on ubuntu through *poppler-utils*
 - The other script `fix_toc_txt.sh` finalizes the computation of the pages 
 
-Here there are some pdf for a small example of the result, where we can see how the single toc of each pdf ended also here, correctly shifted, into the final pdf.
+## Example
+Here there is a small example of the result, using the pdfs in the Test folder, where we can see how the single toc of each pdf ended also here, correctly shifted, into the final document.
 
 ![example of the result](./example.png)
