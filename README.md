@@ -13,7 +13,7 @@ If you answer yes to this, it then asks how you want to add the chapters of the 
 - The library *jpdfbookmarks* is used, so *java* is required in order to run it
 - The merging of the pdf is done by the command *pdfunite*, which is installable on ubuntu through the package *poppler-utils* (sudo apt install it)
 - For the pdf handling also the package *exiftool* is required, and it is installable as before through the package *libimage-exiftool-perl*
-- The other script `fix_toc_txt.sh` finalizes the computation of the pages 
+- The other script `fix_toc_txt.sh` finalizes the computation of the pages
 
 ## Example
 Here there is a small example of the result, using the pdfs in the Test folder, where we can see how the single toc of each pdf ended also here, correctly shifted, into the final document.
