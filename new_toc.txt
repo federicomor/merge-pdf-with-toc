@@ -1,0 +1,46 @@
+
+01-Introduction/1,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+	General Information/2,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+02-ElementsOfC++/59,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+	A note on the C++ Language/60,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+	Some elements of C++/61,Black,notBold,notItalic,closed,TopLeftZoom,0,997,0.0
+		Two simple examples/64,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+		Some nomenclature/65,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+		Scope/68,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+	Fixed width integer types/80,Black,notBold,notItalic,closed,TopLeftZoom,0,997,0.0
+		Implicit and explicit conversion/88,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+		using and typedef/90,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+		the auto keyword/94,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+	Pointers/99,Black,notBold,notItalic,closed,TopLeftZoom,0,997,0.0
+		Constants/101,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+		Enumerations/108,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+03-FloatingPoints/113,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+
+04-VectorsArraysTuples/129,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+	C++ vectors and arrays/130,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+	vector<T>/131,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+	Iterators/143,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+	array<T,N>/152,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+	pair and tuple/157,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+05-PointersSmartPointersandReferences/162,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+	RAII/163,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+	Smart pointers/165,Black,notBold,notItalic,closed,TopLeftZoom,0,997,0.0
+		The use of !uniqueptr!/166,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+		How a !uniqueptr<>! works/169,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+		Dealing with arrays/171,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+		Main methods and utilities of !uniqueptr!/172,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+		Shared pointers/173,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+		References/175,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+	Reference semantic in std containers/177,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+06-Functions-Functors-Lambdas/182,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+	Functions/183,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+	A review on functions in C++/183,Black,notBold,notItalic,closed,TopLeftZoom,0,997,0.0
+		Default parameters/202,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+		Static function variables/204,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+		Pointers to function/205,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+	Functors (function object)/218,Black,notBold,notItalic,closed,TopLeftZoom,0,997,0.0
+		std predefined functors/220,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+	Lambda expressionss/222,Black,notBold,notItalic,closed,TopLeftZoom,0,997,0.0
+		Capture specification/224,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+	Function adapters/236,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
+	Function wrappers/237,Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0
