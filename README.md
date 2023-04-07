@@ -21,7 +21,7 @@ Here there is a small example of the result, using the pdfs in the Test folder, 
 ![example of the result](./example.png)
 
 ## Run of the example
-```bash
+```
 include 01-Introduction.pdf? y
   bookmark also the file? y
   add file chapters as sub-chapters? y
