@@ -19,3 +19,33 @@ If you answer yes to this, it then asks how you want to add the chapters of the 
 Here there is a small example of the result, using the pdfs in the Test folder, where we can see how the single toc of each pdf ended also here, correctly shifted, into the final document.
 
 ![example of the result](./example.png)
+
+## Run of the example
+```bash
+include 01-Introduction.pdf? y
+  bookmark also the file? y
+  add file chapters as sub-chapters? y
+include 02-ElementsOfC++.pdf? y
+  bookmark also the file? y
+  add file chapters as sub-chapters? y
+include 03-FloatingPoints.pdf? y
+  bookmark also the file? y
+  add file chapters as sub-chapters? y
+include 04-VectorsArraysTuples.pdf? y
+  bookmark also the file? y
+  add file chapters as sub-chapters? y
+include 05-PointersSmartPointersandReferences.pdf? y
+  bookmark also the file? y
+  add file chapters as sub-chapters? y
+include 06-Functions-Functors-Lambdas.pdf? y
+  bookmark also the file? y
+  add file chapters as sub-chapters? y
+include out.pdf? n
+
+Merging the pdfs... it may require some time...
+Fixing bookmarks...
+Importing them...
+done!
+
+How to call the final pdf? Lectures
+```
