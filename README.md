@@ -2,7 +2,7 @@
 Merge more pdf files into one, preserving the toc (table of contents) of all of them (ie merging also that).
 
 ## Usage
-Bring all the pdfs into this current folder. Then execute the script `pdf_and_toc.sh`. At the end there will be a `out.pdf` file with the result.
+Bring all the pdfs into this current folder, then execute the script `pdf_and_toc.sh` (make sure that the folder of jpdfbookmarks is in the same directory of the script). At the end there will be a `out.pdf` (or whichever name you choose) file with the result.
 
 ## Technical comments and Requirements
 - The library *jpdfbookmarks* is used, so *java* is required in order to run it
