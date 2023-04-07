@@ -18,7 +18,7 @@ If you answer yes to this, it then asks how you want to add the chapters of the 
 ## Example
 Here there is a small example of the result, using the pdfs in the Test folder, where we can see how the single toc of each pdf ended also here, correctly shifted, into the final document.
 
-![example of the result](./example.png)
+![example of the result](./new_example.png)
 
 ## Run of the example
 ```
