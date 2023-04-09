@@ -11,6 +11,8 @@ If you answer yes to this, it then asks how you want to add the chapters of the 
 
 For each pdf, you can answer "y/n" to each individual question or "a" for saying yes to all the questions.
 
+It can handle also pdf files with spaces in their name, not an easy task when working on linux!
+
 ## Technical comments and Requirements
 - The library *jpdfbookmarks* is used, so *java* is required in order to run it
 - The merging of the pdf is done by the command *pdfunite*, which is installable on ubuntu through the package *poppler-utils* (sudo apt install it)
