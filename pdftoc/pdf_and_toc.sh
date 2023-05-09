@@ -1,6 +1,7 @@
 #################
-cpath="/<path to folder>/pdftoc"
+# cpath="/<path to folder>/pdftoc"
 # it should be something like "/.../pdftoc"
+cpath="/mnt/c/Users/feder/Desktop/Ode/Github/merge-pdf-with-toc/pdftoc"
 #################
 
 echo "" > toc.txt
@@ -63,7 +64,7 @@ echo "Merging the pdfs... it may require some time..."
 pdfunite $files out.pdf
 
 echo "Fixing bookmarks..."
-bash ./pdftoc/fix_toc_txt.sh
+bash $cpath/fix_toc_txt.sh
 # cat new_toc.txt
 
 echo "Importing them..."
