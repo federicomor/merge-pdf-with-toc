@@ -8,41 +8,11 @@ echo "" > toc.txt
 pag=0
 files=""
 
-for i in *.pdf
-do
-	read -p "include $i? " answ
-	if [ $answ = "y" ]; then
-
-		read -p "  > bookmark also the file? " book_file
-		if [ $book_file = "y" ]; then
-			echo "$i/$((1+pag)),Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0" |
-			sed 's/.pdf//' >> toc.txt
-
-			read -p "  > add file chapters as sub-chapters? " sub_chap
-			if [ $sub_chap = "y" ]; then
-				add=`$cpath/jpdfbookmarks_cli.exe -d "$i" |
-				sed "s/\/\(.*\),Black/\/\1+$pag,Black/" | sed "s/\(.*\)/\t\1/" `
-				echo -e "$add" >> toc.txt
-			else
-				add=`$cpath/jpdfbookmarks_cli.exe -d "$i" |
-				sed "s/\/\(.*\),Black/\/\1+$pag,Black/" `
-				echo -e "$add" >> toc.txt
-			fi
-		else
-			add=`$cpath/jpdfbookmarks_cli.exe -d "$i" |
-			sed "s/\/\(.*\),Black/\/\1+$pag,Black/" `
-			echo -e "$add" >> toc.txt
-		fi
-		
-		pag=$((pag + `exiftool "$i" | awk -F": " '/Page Count/{print $2}'`))
-		## Remover spaces from file name
-		mv "$i" `echo $i | sed -e 's/ /_abc_/g'` 2>/dev/null
-		j="`echo $i | sed -e 's/ /_abc_/g'`"
-		files="$files $j "
-
-	elif [ $answ == "a" ]; then
-		# answer a (like all) for saying yes to both questions
-
+read -p "Do you want to use all the pdf in the current folder, or to select them by hand? (all/select) " choice
+if [ $choice = "all" ]; then
+	for i in *.pdf
+	do
+		echo "Processing file $i"
 		echo "$i/$((1+pag)),Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0" |
 			sed 's/.pdf//' >> toc.txt
 		add=`$cpath/jpdfbookmarks_cli.exe -d "$i" |
@@ -54,8 +24,57 @@ do
 		mv "$i" `echo $i | sed -e 's/ /_abc_/g'` 2>/dev/null
 		j="`echo $i | sed -e 's/ /_abc_/g'`"
 		files="$files $j "
-	fi
-done
+	done
+else
+	for i in *.pdf
+	do
+		read -p "include $i? (y/n) " answ
+		if [ $answ = "y" ]; then
+
+			read -p "  > bookmark also the file? (y/n) " book_file
+			if [ $book_file = "y" ]; then
+				echo "$i/$((1+pag)),Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0" |
+				sed 's/.pdf//' >> toc.txt
+
+				read -p "  > add file chapters as sub-chapters? (y/n) " sub_chap
+				if [ $sub_chap = "y" ]; then
+					add=`$cpath/jpdfbookmarks_cli.exe -d "$i" |
+					sed "s/\/\(.*\),Black/\/\1+$pag,Black/" | sed "s/\(.*\)/\t\1/" `
+					echo -e "$add" >> toc.txt
+				else
+					add=`$cpath/jpdfbookmarks_cli.exe -d "$i" |
+					sed "s/\/\(.*\),Black/\/\1+$pag,Black/" `
+					echo -e "$add" >> toc.txt
+				fi
+			else
+				add=`$cpath/jpdfbookmarks_cli.exe -d "$i" |
+				sed "s/\/\(.*\),Black/\/\1+$pag,Black/" `
+				echo -e "$add" >> toc.txt
+			fi
+			
+			pag=$((pag + `exiftool "$i" | awk -F": " '/Page Count/{print $2}'`))
+			## Remover spaces from file name
+			mv "$i" `echo $i | sed -e 's/ /_abc_/g'` 2>/dev/null
+			j="`echo $i | sed -e 's/ /_abc_/g'`"
+			files="$files $j "
+
+		elif [ $answ == "a" ]; then
+			# answer a (like all) for saying yes to both questions
+
+			echo "$i/$((1+pag)),Black,notBold,notItalic,open,TopLeftZoom,0,997,0.0" |
+				sed 's/.pdf//' >> toc.txt
+			add=`$cpath/jpdfbookmarks_cli.exe -d "$i" |
+				sed "s/\/\(.*\),Black/\/\1+$pag,Black/" | sed "s/\(.*\)/\t\1/" `
+				echo -e "$add" >> toc.txt
+
+			pag=$((pag + `exiftool "$i" | awk -F": " '/Page Count/{print $2}'`))
+			## Remover spaces from file name
+			mv "$i" `echo $i | sed -e 's/ /_abc_/g'` 2>/dev/null
+			j="`echo $i | sed -e 's/ /_abc_/g'`"
+			files="$files $j "
+		fi
+	done
+fi
 
 echo ""
 
@@ -73,8 +92,9 @@ $cpath/jpdfbookmarks_cli.exe -a new_toc.txt -f out.pdf
 echo "done!"
 echo ""
 rm temp.txt toc.txt
-read -p "How to call the final pdf? " pdf_name
-mv out.pdf "$pdf_name.pdf"
+# read -p "How to call the final pdf? " pdf_name
+# mv out.pdf "$pdf_name.pdf"
+
 # rm new_toc.txt
 
 ## Recover original names
