@@ -28,7 +28,7 @@ if [ $choice = "all" ]; then
 else
 	for i in *.pdf
 	do
-		read -p "include $i? (y/n) " answ
+		read -p "include $i? (y/n/a) " answ
 		if [ $answ = "y" ]; then
 
 			read -p "  > bookmark also the file? (y/n) " book_file
