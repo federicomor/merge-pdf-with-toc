@@ -8,8 +8,8 @@ echo "" > toc.txt
 pag=0
 files=""
 
-read -p "Do you want to use all the pdf in the current folder, or to select them by hand? (all/select) " choice
-if [ $choice = "all" ]; then
+read -p "Do you want to use all the pdf in the current folder, or to select them by hand? (all/select/a/s) " choice
+if [ $choice = "all" ] || [ $choice = "a" ] ; then
 	for i in *.pdf
 	do
 		echo "Processing file $i"
@@ -40,11 +40,14 @@ else
 				if [ $sub_chap = "y" ]; then
 					add=`$cpath/jpdfbookmarks_cli.exe -d "$i" |
 					sed "s/\/\(.*\),Black/\/\1+$pag,Black/" | sed "s/\(.*\)/\t\1/" `
+					# echo $add
 					echo -e "$add" >> toc.txt
-				else
-					add=`$cpath/jpdfbookmarks_cli.exe -d "$i" |
-					sed "s/\/\(.*\),Black/\/\1+$pag,Black/" `
-					echo -e "$add" >> toc.txt
+				# else
+				# 	# add=`$cpath/jpdfbookmarks_cli.exe -d "$i" |
+				# 	# sed "s/\/\(.*\),Black/\/\1+$pag,Black/" `
+				# 	# echo $add
+				# 	# echo -e "$add" >> toc.txt
+				# 	continue
 				fi
 			else
 				add=`$cpath/jpdfbookmarks_cli.exe -d "$i" |
