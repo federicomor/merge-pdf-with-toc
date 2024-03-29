@@ -4,9 +4,12 @@
 cpath="/mnt/c/Users/feder/Desktop/Ode/Github/merge-pdf-with-toc/pdftoc"
 #################
 
+
 echo "" > toc.txt
 pag=0
 files=""
+
+
 
 read -p "Do you want to use all the pdf in the current folder, or to select them by hand? (all/select/a/s) " choice
 if [ $choice = "all" ] || [ $choice = "a" ] ; then
@@ -81,9 +84,15 @@ fi
 
 echo ""
 
+read -p "Which program do you want to use [pdfunite/pdftk]? " pdfdev
 echo "Merging the pdfs... it may require some time..."
 # echo $files
-pdfunite $files out.pdf
+
+if [ $pdfdev = "pdfunite" ]; then
+	pdfunite $files out.pdf
+else
+	pdftk $files output out.pdf
+fi
 
 echo "Fixing bookmarks..."
 bash $cpath/fix_toc_txt.sh
