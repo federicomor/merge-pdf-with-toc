@@ -22,7 +22,8 @@ if [ $choice = "all" ] || [ $choice = "a" ] ; then
 			sed "s/\/\(.*\),Black/\/\1+$pag,Black/" | sed "s/\(.*\)/\t\1/" `
 			echo -e "$add" >> toc.txt
 
-		pag=$((pag + `exiftool "$i" | awk -F": " '/Page Count/{print $2}'`))
+		# pag=$((pag + `exiftool "$i" | awk -F": " '/Page Count/{print $2}'`))
+		pag=$((pag + `pdfinfo "$i" | grep Pages | awk '{print $2}'`))
 		## Remover spaces from file name
 		mv "$i" `echo $i | sed -e 's/ /_abc_/g'` 2>/dev/null
 		j="`echo $i | sed -e 's/ /_abc_/g'`"
@@ -58,7 +59,8 @@ else
 				echo -e "$add" >> toc.txt
 			fi
 			
-			pag=$((pag + `exiftool "$i" | awk -F": " '/Page Count/{print $2}'`))
+			# pag=$((pag + `exiftool "$i" | awk -F": " '/Page Count/{print $2}'`))
+			pag=$((pag + `pdfinfo "$i" | grep Pages | awk '{print $2}'`))
 			## Remover spaces from file name
 			mv "$i" `echo $i | sed -e 's/ /_abc_/g'` 2>/dev/null
 			j="`echo $i | sed -e 's/ /_abc_/g'`"
@@ -73,7 +75,8 @@ else
 				sed "s/\/\(.*\),Black/\/\1+$pag,Black/" | sed "s/\(.*\)/\t\1/" `
 				echo -e "$add" >> toc.txt
 
-			pag=$((pag + `exiftool "$i" | awk -F": " '/Page Count/{print $2}'`))
+			# pag=$((pag + `exiftool "$i" | awk -F": " '/Page Count/{print $2}'`))
+			pag=$((pag + `pdfinfo "$i" | grep Pages | awk '{print $2}'`))
 			## Remover spaces from file name
 			mv "$i" `echo $i | sed -e 's/ /_abc_/g'` 2>/dev/null
 			j="`echo $i | sed -e 's/ /_abc_/g'`"
